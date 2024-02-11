@@ -47,6 +47,8 @@ class App(customtkinter.CTk):
         calcular_resto = operador_a % operador_b
         mensaje = f"El resto de dividir {operador_a} por {operador_b} es: {calcular_resto}"
         alert("Calcular resta", mensaje)
+        self.txt_operador_a.delete(0, "end")
+        self.txt_operador_b.delete(0, "end")
         pass
         
         
