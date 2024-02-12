@@ -53,9 +53,7 @@ class App(customtkinter.CTk):
     def btn_cantidad_camiones_on_click(self):
         toneladas = self.txt_toneladas.get()
         toneladas = float(toneladas)
-        camiones = 1
-        if toneladas > 3.5:
-            camiones += math.ceil((toneladas - 3.5) / 3.5)
+        camiones = math.ceil(toneladas / 3.5)
         
         alert("Cantidad de Camiones", f"Se necesitan {camiones} camiones para transportar {toneladas} toneladas de materiales.")
     
