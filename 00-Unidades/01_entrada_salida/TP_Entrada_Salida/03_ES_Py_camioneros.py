@@ -64,7 +64,7 @@ class App(customtkinter.CTk):
         velocidad = 90
         tiempo_horas = kilometros / velocidad
         tiempo_minutos = (tiempo_horas - int(tiempo_horas)) * 60
-        mensaje = f"El tiempo de llegada de los camiones es de aproximadamente {int(tiempo_horas)} horas y {int(tiempo_minutos)} minutos."
+        mensaje = f"El tiempo aproximado de llegada de los camiones es de aproximadamente {int(tiempo_horas)} horas y {int(tiempo_minutos)} minutos."
         alert("Tiempo de Llegada", mensaje)
     
     
