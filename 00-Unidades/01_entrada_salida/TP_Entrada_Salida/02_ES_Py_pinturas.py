@@ -52,7 +52,7 @@ class App(customtkinter.CTk):
         temperatura_c = self.txt_temperatura_c.get()
         temperatura_c = float(temperatura_c)
         convertir_c_a_f = (temperatura_c * 9/5) + 32
-        mensaje = f"({temperatura_c}°C x 9/5) + 32 = {convertir_c_a_f}°F"
+        mensaje = f"{temperatura_c}° Celsius son {convertir_c_a_f}° Fahrenheit"
         self.txt_temperatura_f.delete(0, "end")
         self.txt_temperatura_c.delete(0, "end")
         alert("Celsius a Fahrenheit", mensaje)
@@ -63,7 +63,7 @@ class App(customtkinter.CTk):
         temperatura_f = self.txt_temperatura_f.get()
         temperatura_f = float(temperatura_f)
         convertir_f_a_c = (temperatura_f - 32) * 5/9
-        mensaje = f"({temperatura_f}°F - 32) x 5/9 ={convertir_f_a_c}°C"
+        mensaje = f"{temperatura_f}° Fahrenheit son {convertir_f_a_c}° Celsius"
         self.txt_temperatura_f.delete(0, "end")
         self.txt_temperatura_c.delete(0, "end")
         alert("Farenheit a Celcius", mensaje)
