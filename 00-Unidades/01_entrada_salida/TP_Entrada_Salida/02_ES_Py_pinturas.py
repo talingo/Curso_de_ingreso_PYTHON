@@ -66,7 +66,7 @@ class App(customtkinter.CTk):
         mensaje = f"{temperatura_f}° Fahrenheit son {convertir_f_a_c}° Celsius"
         self.txt_temperatura_f.delete(0, "end")
         self.txt_temperatura_c.delete(0, "end")
-        alert("Farenheit a Celcius", mensaje)
+        alert("Farenheit a Celsius", mensaje)
     
     
 if __name__ == "__main__":
