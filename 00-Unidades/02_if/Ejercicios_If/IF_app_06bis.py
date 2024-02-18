@@ -44,13 +44,13 @@ class App(customtkinter.CTk):
         altura_float = float(altura)
 
         if altura_float < 160:
-            mensaje = "Base"
-        if altura_float < 180:
-            mensaje = "Escolta"
-        if altura_float < 200:
-            mensaje = "Alero"
+            mensaje = "Su posición es Base"
+        elif altura_float < 180:
+            mensaje = "Su posición es Escolta"
+        elif altura_float < 200:
+            mensaje = "Su posición es Alero"
         else: 
-            mensaje = "Pívot o Ala-Pívot"
+            mensaje = "Su posición es Pívot o Ala-Pívot"
 
         alert("UTN", mensaje)
 
