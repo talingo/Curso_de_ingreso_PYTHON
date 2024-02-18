@@ -41,13 +41,13 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         altura = self.txt_altura.get()
-        altura_int = int(altura)
+        altura_float = float(altura)
 
-        if altura_int < 160:
+        if altura_float < 160:
             mensaje = "Base"
-        if altura_int < 180:
+        if altura_float < 180:
             mensaje = "Escolta"
-        if altura_int < 200:
+        if altura_float < 200:
             mensaje = "Alero"
         else: 
             mensaje = "Pívot o Ala-Pívot"
