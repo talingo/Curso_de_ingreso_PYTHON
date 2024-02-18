@@ -42,7 +42,7 @@ class App(customtkinter.CTk):
             mensaje = "El usuario es un niñe"
         elif edad_int < 13:
             mensaje = "El usuario es pre-adolescente"
-        elif edad_int <= 17:
+        elif edad_int < 18:
             mensaje = "El usuario es adolescente"
         else:
             mensaje = "El usuario es mayor de edad"
