@@ -48,13 +48,14 @@ class App(customtkinter.CTk):
         
         match mes_seleccionado:
             case 'Enero':
-                alert("Mensaje", "¡Que comiences bien el año!")
+                mensaje = f"¡Que comiences bien el año!"
             case 'Marzo':
-                alert("Mensaje", "¡A clases!")
+                mensaje = f"¡A clases!"
             case 'Julio':
-                alert("Mensaje", "¡Se vienen las vacaciones!")
+                mensaje = f"¡Se vienen las vacaciones!"
             case 'Diciembre':
-                alert("Mensaje", "¡Felices fiestas!")
+                mensaje = f"¡Felices fiestas!"
+        alert("Mensaje", mensaje)
     
     
 if __name__ == "__main__":
