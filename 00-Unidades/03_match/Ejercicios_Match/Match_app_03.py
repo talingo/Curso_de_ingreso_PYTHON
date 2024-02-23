@@ -6,12 +6,12 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Lautaro
+apellido: Llusa
 ---
 Ejercicio: Match_03
 ---
-Enuciado:
+Enunciado:
 Al presionar el botón ‘Informar’ mostrar mediante alert los siguientes 
 mensajes en función del mes seleccionado:
     Si es febrero: ‘Este mes no tiene más de 29 días’
@@ -38,7 +38,16 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes_seleccionado = self.combobox_mes.get()
+
+
+        match mes_seleccionado:
+            case 'Febrero':
+                mensaje = f'Este mes no tiene más de 29 días'
+            case _:
+                mensaje = f'Este mes tiene 30 días o más'
+
+        alert("Mensaje", mensaje)
     
     
 if __name__ == "__main__":
