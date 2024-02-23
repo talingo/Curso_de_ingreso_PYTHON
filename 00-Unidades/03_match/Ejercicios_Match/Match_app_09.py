@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Lautaro
+apellido: Llusa
 ---
 Ejercicio: Match_09
 ---
@@ -57,7 +57,56 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino = self.combobox_destino.get()
+        estacion = self.combobox_estaciones.get()
+        precio = 15000
+
+        match estacion:
+            case 'Invierno':
+                aumento_bariloche = 0.20
+                descuento_cataratas = 0.10
+                descuento_cordoba = 0.10
+                descuento_mar_del_plata = 0.20
+            case 'Verano':
+                descuento_bariloche = 0.20
+                aumento_cataratas = 0.10
+                aumento_cordoba = 0.10
+                aumento_mar_del_plata = 0.20
+            case 'Primavera', 'Otoño':
+                aumento_bariloche = 0.10
+                aumento_cataratas = 0.10
+                aumento_mar_del_plata = 0.10
+                descuento_cordoba = 0
+
+        if estacion == 'Invierno':
+            if destino == 'Bariloche':
+                precio_final = precio * (1 + aumento_bariloche)
+            elif destino in ('Cataratas', 'Cordoba'):
+                precio_final = precio * (1 - descuento_cataratas)
+            elif destino == 'Mar del plata':
+                precio_final = precio * (1 - descuento_mar_del_plata)
+        elif estacion == 'Verano':
+            if destino == 'Bariloche':
+                precio_final = precio * (1 - descuento_bariloche)
+            elif destino in ('Cataratas', 'Cordoba'):
+                precio_final = precio * (1 + aumento_cataratas)
+            elif destino == 'Mar del plata':
+                precio_final = precio * (1 + aumento_mar_del_plata)
+        elif estacion in ('Primavera', 'Otoño'):
+            if destino == 'Bariloche':
+                precio_final = precio * (1 + aumento_bariloche)
+            elif destino == 'Cataratas':
+                precio_final = precio * (1 + aumento_cataratas)
+            elif destino == 'Mar del plata':
+                precio_final = precio * (1 + aumento_mar_del_plata)
+            elif destino == 'Cordoba':
+                precio_final = precio
+
+        alert("UTN", f"El precio final por ir a {destino} en {estacion} es {precio_final}")
+
+
+
+        
             
     
 if __name__ == "__main__":
