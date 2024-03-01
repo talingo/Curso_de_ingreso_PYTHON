@@ -45,7 +45,6 @@ class App(customtkinter.CTk):
             numero = prompt("UTN","Ingrese un numero")
 
             if numero == None or numero == 0:
-                numero(int)
                 break
             numero = int(numero)
             if numero > 0:

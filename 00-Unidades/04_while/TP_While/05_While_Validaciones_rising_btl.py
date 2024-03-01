@@ -5,14 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Lautaro
+apellido: Llusa
 ---
 TP: While_validaciones_rising_btl
 ---
 Enunciado:
-Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
-por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
+Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e 
+ingresada por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
 
 Los datos requeridos son los siguientes:
     Apellido
@@ -54,8 +54,35 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        seguir=True
 
+        while seguir==True:
+            apellido=prompt("Apellido","Ingrese su apellido")
+            Edad=prompt("Edad","Ingrese su edad")
+            Edad=int(Edad)
+            while Edad <18 and Edad >90:
+                Edad=prompt("Error","Re-ingrese su edad")
+                Edad=int(Edad)
+            Estado_civil=prompt("Estado civil","Ingrese su estado civil:Soltero/a, Casado/a, Divorciado/a, Viudo/a")
+            while Estado_civil !="Soltero/a" and Estado_civil != "Casado/a" and Estado_civil !="Divorciado/a" and Estado_civil !="Viudo/a":
+                Estado_civil=prompt("Error","Re-ingrese el estado civil: Soltero/a, Casado/a, Divorciado/a, Viudo/a")
+            Numero_legajo=prompt("Legajo","Ingrese su numero de legajo")
+            Numero_legajo=int(Numero_legajo)
+
+            seguir=question("Pregunta","Desea continuar?")
+
+
+            self.txt_apellido.delete(0,tkinter.END)
+            self.txt_apellido.insert(0,apellido)
+            
+            self.txt_tipo.delete(0,tkinter.END)
+            self.txt_tipo.insert(0,Estado_civil)
+            
+            self.txt_edad.delete(0,tkinter.END)
+            self.txt_edad.insert(0,Edad)
+
+            self.txt_legajo.delete(0,tkinter.END)
+            self.txt_legajo.insert(0,Numero_legajo)
 
 if __name__ == "__main__":
     app = App()
